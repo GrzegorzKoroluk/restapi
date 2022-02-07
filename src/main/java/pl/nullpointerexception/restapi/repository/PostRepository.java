@@ -14,8 +14,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 
     List<Post> findAllByTitle(String title);
 
-    @Query("Select p From Post p" +
-           " left join fetch p.comment")
+    @Query("Select p From Post p left join fetch p.comment")
     List<Post> findAllPosts(Pageable page);
 
 //    @Query("select p from Post p where title = ?1")
